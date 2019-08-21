@@ -34,4 +34,6 @@ testCafe
 ```
 
 ## Author
+
+Adam Dely
  
