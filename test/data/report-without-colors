@@ -1,0 +1,31 @@
+Running tests in:
+ - Chrome 76.0.3809 / Windows 10.0.0
+
+ TEST DATA - Change language
+loginName: svk_pr_TesterK-02
+password: aaaa1111
+expectedUserName: Muster Mann
+expectedCurrency: EUR
+ × Change language tests - Change language
+
+   1) AssertionError: expected 'Deutsch' to deeply equal 'English'
+
+      Browser: Chrome 76.0.3809 / Windows 10.0.0
+
+         19 |    test.meta(data)('Change language', async t => {
+         20 |        await compareText(welcomeModel.welcomeHeader,keys.PAGE_WELCOME_SUBHEADING);
+         21 |        await compareText(welcomeModel.welcomeText,keys.PAGE_WELCOME_CONTENT);
+         22 |        await t
+         23 |            .click(footerModel.languageSelector)
+       > 24 |            .expect(footerModel.languageButtonByValue(languageCode.DE).textContent).eql(language.EN)
+         25 |            .expect(footerModel.languageButtonByValue(languageCode.EN).textContent).eql(language.EN)
+         26 |            .click(footerModel.languageButtonByValue(languageCode.DE))
+         27 |        await compareText(welcomeModel.welcomeHeader,keys.PAGE_WELCOME_SUBHEADING,languageCode.DE)
+         28 |        await compareText(welcomeModel.welcomeText,keys.PAGE_WELCOME_CONTENT,languageCode.DE)
+         29 |
+
+         at eql (C:\dev\repositories\tpp-auth-webui\tests\webuitests\cafeTests\basic\changeLanguageTest.js:24:85)
+
+
+
+ 1/1 failed (22s)
